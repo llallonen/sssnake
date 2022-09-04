@@ -4,7 +4,8 @@ export interface ISnakeCoord {
 }
 
 export interface IGlobalState {
-    snake: ISnakeCoord[] | []
+    snake: ISnakeCoord[] | [];
+    disallowedDirection: string;
 }
 
 const GlobalState: IGlobalState = {
@@ -15,6 +16,7 @@ const GlobalState: IGlobalState = {
         { x: 520, y: 300 },
         { x: 500, y: 300 },
     ],
+    disallowedDirection: "",
 }
 
 export const gameReducer = (state = GlobalState, action: any) => {

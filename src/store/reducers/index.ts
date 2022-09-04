@@ -1,4 +1,4 @@
-interface ISnakeCoord {
+export interface ISnakeCoord {
     x: number;
     y: number;
 }
@@ -17,12 +17,7 @@ const GlobalState: IGlobalState = {
     ],
 }
 
-interface ISnakeCoord {
-    x: number;
-    y: number;
-}
-
-const gameReducer = (state = GlobalState, action: any) => {
+export const gameReducer = (state = GlobalState, action: any) => {
     switch (action.type) {
         case "MOVE_RIGHT":
             return {
@@ -32,5 +27,3 @@ const gameReducer = (state = GlobalState, action: any) => {
             return state;
     }
 }
-
-export default { gameReducer };

@@ -10,7 +10,7 @@ const App = () => {
         <ChakraProvider>
           <Container maxW="container.lg" centerContent>
             <Heading as="h1" size="xl">SNAKE GAME</Heading>
-            <Canvas height={600} width={1000} />
+            <Canvas height={500} width={700} />
           </Container>
         </ChakraProvider>
       </Provider>

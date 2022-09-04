@@ -1,14 +1,35 @@
-const GlobalState = {
-    data: "",
+interface ISnakeCoord {
+    x: number;
+    y: number;
 }
 
-const gameReducer = (state = GlobalState, action) => {
-    switch(action.type) {
-        case "MOVE_RIGHT": 
+export interface IGlobalState {
+    snake: ISnakeCoord[] | []
+}
+
+const GlobalState: IGlobalState = {
+    snake: [
+        { x: 580, y: 300 },
+        { x: 560, y: 300 },
+        { x: 540, y: 300 },
+        { x: 520, y: 300 },
+        { x: 500, y: 300 },
+    ],
+}
+
+interface ISnakeCoord {
+    x: number;
+    y: number;
+}
+
+const gameReducer = (state = GlobalState, action: any) => {
+    switch (action.type) {
+        case "MOVE_RIGHT":
             return {
                 ...state, data: action.payload
-            } 
-        default: state
+            }
+        default:
+            return state;
     }
 }
 

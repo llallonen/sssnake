@@ -19,9 +19,13 @@ const GlobalState: IGlobalState = {
     disallowedDirection: "",
 }
 
+
 export const gameReducer = (state = GlobalState, action: any) => {
     switch (action.type) {
-        case "MOVE_RIGHT":
+        case "RIGHT":
+        case "LEFT":
+        case "UP":
+        case "DOWN":
             return {
                 ...state, data: action.payload
             }
